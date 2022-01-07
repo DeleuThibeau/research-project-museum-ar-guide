@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!-- include A-Frame obviously -->
+<script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<!-- include ar.js for A-Frame -->
+<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+<body style='margin : 0px; overflow: hidden;'>
+  <a-scene embedded arjs>
+    <!-- create your content here. just a box for now -->
+    <!-- <a-box position='0 0.5 0' material='opacity: 1; color: cyan;'>
+        <a-animation attribute='rotation'
+        dur="3000"
+        to="360 360 0"
+        repeat="indefinite"
+        easing="linear">
+        </a-animation>
+    </a-box> -->
+
+      <a-assets>
+        <a-asset-item id="painting" src="assets/models/painting01/scene.gltf"></a-asset-item>
+      </a-assets>
+      <a-entity gltf-model="#painting" scale="0.5 0.5 0.5" rotation="270 0 0"></a-entity>
+    <!-- define a camera which will move according to the marker position -->
+    <a-marker-camera preset='hiro'></a-marker-camera>
+  </a-scene>
+</body>
+</html>
