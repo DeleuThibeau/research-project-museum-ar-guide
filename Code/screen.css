@@ -1,0 +1,29 @@
+.arjs-loader {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.arjs-loader div {
+  text-align: center;
+  font-size: 1.25em;
+  color: black;
+}
+
+.button {
+  margin-bottom: 20rem;
+}
+
+.ar-scene-frame {
+  width: 480px;
+  height: 480px;
+  display: flex;
+  justify-content: center;
+}
