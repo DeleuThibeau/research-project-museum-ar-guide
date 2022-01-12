@@ -1,0 +1,17 @@
+{
+ "painting01":{
+     "name": "Mona Lisa",
+     "description":"Made by a famous painter",
+     "other": "Costs a lot of money"
+ },
+ "painting02":{
+    "name": "The scream",
+    "description":"Made by a Mediocre painter",
+    "other": "Costs a lot of money"
+},
+"painting03":{
+    "name": "Pigna Colada",
+    "description":"Made by a dumb painter",
+    "other": "Costs a lot of money"
+}
+}
