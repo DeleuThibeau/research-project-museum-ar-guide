@@ -29,3 +29,8 @@ const dynamicText = function(){
 
 
 }
+
+const cameraSelection = function(){
+    var secondCameraEl = document.querySelector('#second-camera');
+    secondCameraEl.setAttribute('camera', 'active', true);
+}
