@@ -1,6 +1,10 @@
 document.addEventListener('DOMContentLoaded', function(){
   console.log('DOM fully loaded and parsed');
   renderCorrectFunctions();
+
+  document.getElementById("onboardingButton").onclick = function(){
+    document.getElementById("onboarding").style.display="none"; 
+  }
 });
 
 
@@ -82,5 +86,9 @@ const dynamicText = function(){
 //         }
 //       });
 // }
+
+
+  
+
 
 
