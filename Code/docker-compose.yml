@@ -1,0 +1,9 @@
+version: '3.4'
+
+services: 
+  app: # name of the first service
+    image: docker.io/library/researchprojectmuseumarguide:latest 
+    container_name: demo_research_project
+    build: . # specify the directory of the Dockerfile
+    ports:
+      - 3000:3000 # specify port forewarding  
