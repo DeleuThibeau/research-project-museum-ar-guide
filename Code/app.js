@@ -11,8 +11,6 @@ document.addEventListener('DOMContentLoaded', function(){
 const renderCorrectFunctions = function(){
   var imagePage = document.querySelector('.js-scene-image')
   var imageCode = document.querySelector('.js-scene-code')
-  console.log(imagePage)
-  console.log(imageCode)
 
     if(imagePage){
       // renderCorrectModelOnImagePage();
@@ -36,14 +34,21 @@ const dynamicText = function(){
             console.log(json)
             AFRAME.registerComponent('render-dynamic-text', {
                 init: function () {
+                  
                   var sceneE1 = this.el;
-                  var atext = sceneE1.querySelector("a-text")
+                  var atext = sceneE1.querySelectorAll("a-text")
                   var aEntity = sceneE1.querySelector('a-entity')
                   console.log(sceneE1)
                   console.log(aEntity)
                   console.log(atext)
-                  console.log(atext.setAttribute('value', json.painting02.description))
-                  atext.setAttribute('value', json.painting02.description)
+                  // console.log(atext.setAttribute('value', json.painting02.description))
+                  // atext.setAttribute('value', json.painting02.description)
+                  atext[0].setAttribute('value', json.painting02.name)
+                  console.log(atext[0])
+                  atext[1].setAttribute('value', json.painting02.description)
+                  console.log(atext[1])
+                  atext[2].setAttribute('value', json.painting02.other)
+                  console.log(atext[2])
                 }
               });
         }

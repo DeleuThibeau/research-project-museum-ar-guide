@@ -13,7 +13,7 @@
     <script src="app.js"></script>
   </head>
   <body style="margin: 0px; overflow: hidden; position: relative">
-    <a-scene class="c-scene-code" render-dynamic-text embedded>
+    <a-scene class="js-scene-code c-scene-code" render-dynamic-text embedded>
       <!-- create your content here. just a box for now -->
       <!-- <a-box position='0 0.5 0' material='opacity: 1; color: cyan;'>
         <a-animation attribute='rotation'
@@ -35,8 +35,13 @@
         gltf-model="#painting"
         scale="0.5 0.5 0.5"
         rotation="270 0 0"
+        position="0 0 0"
       ></a-entity>
-      <a-text scale="1 1 1" rotation="270 0 0" position="-1 0 1.5"></a-text>
+
+      <!-- position=" x,z,y" -->
+      <a-text scale="1 1 1" rotation="270 0 0" position="-1 -2 -2"></a-text>
+      <a-text scale="1 1 1" rotation="270 0 0" position="2 -2 0"></a-text>
+      <a-text scale="1 1 1" rotation="270 0 0" position="-1 -2 2"></a-text>
 
       <!-- define a camera which will move according to the marker position -->
       <a-marker-camera preset="hiro"> </a-marker-camera>
