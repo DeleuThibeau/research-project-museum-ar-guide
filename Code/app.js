@@ -10,18 +10,17 @@ document.addEventListener('DOMContentLoaded', function(){
 
 const renderCorrectFunctions = function(){
   var imagePage = document.querySelector('.js-scene-image')
-  var imageCode = document.querySelector('.js-scene-code')
+  var codePage = document.querySelector('.js-scene-code')
 
     if(imagePage){
-      // renderCorrectModelOnImagePage();
-       console.log("run function here")
-    }else if(imageCode){
-      dynamicText();
+      dynamicTextImagePage();
+    }else if(codePage){
+      dynamicTextCodePage();
     }
 
 }
 
-const dynamicText = function(){
+const dynamicTextCodePage = function(){
     console.log("CODEPAGEFUNCTION")
     let json = "";
     fetch("./assets/json/descriptions.json")
@@ -30,16 +29,16 @@ const dynamicText = function(){
     })
     .then((jsondata) => {
         json = jsondata
+        // console.log(json)
         if(json){
-            console.log(json)
+            // console.log(json)
             AFRAME.registerComponent('render-dynamic-text', {
                 init: function () {
-                  
                   var sceneE1 = this.el;
                   var atext = sceneE1.querySelectorAll("a-text")
                   var aEntity = sceneE1.querySelector('a-entity')
-                  console.log(sceneE1)
-                  console.log(aEntity)
+                  // console.log(sceneE1)
+                  // console.log(aEntity)
                   console.log(atext)
                   // console.log(atext.setAttribute('value', json.painting02.description))
                   // atext.setAttribute('value', json.painting02.description)
@@ -53,6 +52,42 @@ const dynamicText = function(){
               });
         }
     })
+
+
+}
+
+const dynamicTextImagePage = function(){
+  console.log("IMAGEPAGEFUNCTION")
+  let json = "";
+  fetch("./assets/json/descriptions.json")
+  .then(response => {
+  return response.json();
+  })
+  .then((jsondata) => {
+      json = jsondata
+      // console.log(json)
+      if(json){
+          // console.log(json)
+          AFRAME.registerComponent('render-dynamic-text', {
+              init: function () {
+                var sceneE1 = this.el;
+                var atext = sceneE1.querySelectorAll("a-text")
+                var aEntity = sceneE1.querySelector('a-entity')
+                // console.log(sceneE1)
+                // console.log(aEntity)
+                console.log(atext)
+                // console.log(atext.setAttribute('value', json.painting02.description))
+                // atext.setAttribute('value', json.painting02.description)
+                atext[0].setAttribute('value', json.painting01.name)
+                console.log(atext[0])
+                atext[1].setAttribute('value', json.painting01.description)
+                console.log(atext[1])
+                atext[2].setAttribute('value', json.painting01.other)
+                console.log(atext[2])
+              }
+            });
+      }
+  })
 
 
 }

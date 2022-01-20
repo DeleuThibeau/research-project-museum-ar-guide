@@ -14,7 +14,7 @@
       renderer="logarithmicDepthBuffer: true;"
       embedded
       arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false;"
-      render-correct-model
+      render-dynamic-text
     >
       <a-assets>
         <a-asset-item
@@ -22,7 +22,7 @@
           src="assets/models/painting02/scene.gltf"
         ></a-asset-item>
       </a-assets>
-      <!-- use rawgithack to retrieve the correct url for nft marker (see 'trex' below) -->
+      <!-- Alles dat onder de NFT tag zit, zal worden gerenderd bij het herkennen van de image. -->
       <a-nft
         type="nft"
         url="assets/images/image02\painting02"
@@ -34,10 +34,26 @@
         <a-entity
           aEntity
           gltf-model="#painting"
-          scale="40 40 40"
+          scale="60 60 60"
           rotation="270 0 0"
-          position="150 75 0"
+          position="350 0 -100"
         ></a-entity>
+
+        <a-text
+          scale="100 100 100"
+          rotation="270 0 0"
+          position="300 0 -400"
+        ></a-text>
+        <a-text
+          scale="75 75 75"
+          rotation="270 0 0"
+          position="550 200 -100"
+        ></a-text>
+        <a-text
+          scale="100 100 100"
+          rotation="270 0 0"
+          position="250 0 200"
+        ></a-text>
       </a-nft>
       <a-entity camera></a-entity>
       <div class="arjs-loader-01">
