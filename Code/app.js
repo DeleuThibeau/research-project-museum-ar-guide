@@ -188,17 +188,17 @@ const successCallback = function(position){
 
       if(itemName == "painting01"){
         if(distance > 0){
-          aEntity.setAttribute("scale", "0.1 0.1 0.1")
-          console.log(aEntity)
-        }
-  
-        if(distance > 10){
           aEntity.setAttribute("scale", "0.5 0.5 0.5")
           console.log(aEntity)
         }
   
-        if(distance > 15){
+        if(distance > 10){
           aEntity.setAttribute("scale", "1 1 1")
+          console.log(aEntity)
+        }
+  
+        if(distance > 15){
+          aEntity.setAttribute("scale", "2 2 2")
           console.log(aEntity)
         }
       }
