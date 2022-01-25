@@ -22,11 +22,15 @@
           id="painting02"
           src="assets/models/painting02/scene.gltf"
         ></a-asset-item>
+        <a-asset-item
+          id="painting01"
+          src="assets/models/painting01/scene.gltf"
+        ></a-asset-item>
       </a-assets>
       <!-- Alles dat onder de NFT tag zit, zal worden gerenderd bij het herkennen van de image. -->
       <a-nft
         type="nft"
-        url="assets/images/image02\painting02"
+        url="assets/images/image02/painting02"
         smooth="true"
         smoothCount="10"
         smoothTolerance="0.01"
@@ -35,6 +39,39 @@
         <a-entity
           aEntity
           gltf-model="#painting02"
+          scale="60 60 60"
+          rotation="270 0 0"
+          position="350 0 -100"
+        ></a-entity>
+
+        <a-text
+          scale="100 100 100"
+          rotation="270 0 0"
+          position="300 0 -400"
+        ></a-text>
+        <a-text
+          scale="75 75 75"
+          rotation="270 0 0"
+          position="550 200 -100"
+        ></a-text>
+        <a-text
+          scale="100 100 100"
+          rotation="270 0 0"
+          position="250 0 200"
+        ></a-text>
+      </a-nft>
+
+      <a-nft
+        type="nft"
+        url="assets/images/image01/trex"
+        smooth="true"
+        smoothCount="10"
+        smoothTolerance="0.01"
+        smoothThreshold="5"
+      >
+        <a-entity
+          aEntity
+          gltf-model="#painting01"
           scale="60 60 60"
           rotation="270 0 0"
           position="350 0 -100"
