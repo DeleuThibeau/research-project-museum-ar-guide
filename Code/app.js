@@ -14,6 +14,7 @@ const renderCorrectFunctions = function(){
   var codePage = document.querySelector('.js-scene-code')
 
     if(imagePage){
+      // Code reference => https://stackoverflow.com/questions/19591012/geolocation-success-callback-how-do-i-work-with-the-returned-object-outside-th 
       navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
       dynamicTextImagePage();
       
@@ -22,7 +23,6 @@ const renderCorrectFunctions = function(){
       dynamicTextCodePage();
       
     }
-
 }
 
 const dynamicTextCodePage = function(){
@@ -37,6 +37,7 @@ const dynamicTextCodePage = function(){
         // console.log(json)
         if(json){
             // console.log(json)
+            // Code reference => https://aframe.io/docs/1.2.0/introduction/writing-a-component.html 
             AFRAME.registerComponent('render-dynamic-text', {
                 init: function () {
                   var sceneE1 = this.el;
@@ -62,7 +63,6 @@ const dynamicTextCodePage = function(){
 }
 
 const dynamicTextImagePage = function(){
-  console.log("IMAGEPAGEFUNCTION")
   let json = "";
   fetch("./assets/json/descriptions.json")
   .then(response => {
@@ -73,6 +73,7 @@ const dynamicTextImagePage = function(){
       // console.log(json)
       if(json){
           // console.log(json)
+          // Code reference => https://aframe.io/docs/1.2.0/introduction/writing-a-component.html 
           AFRAME.registerComponent('render-dynamic-text', {
               init: function () {
                 var sceneE1 = this.el;
@@ -97,44 +98,8 @@ const dynamicTextImagePage = function(){
 
 }
 
-// TensorFlow JS might be interesting for if conditioning and setting the correct path.
-// const renderCorrectModelOnImagePage = function(){
-//     console.log("IMAGEPAGEFUNCTION")
-//     AFRAME.registerComponent('render-correct-model', {
-//         init: function () {
-//           var sceneE1 = this.el;
-//           var aEntity = sceneE1.querySelector('a-entity')
-//           var anft = sceneE1.querySelector('a-nft')
-//           var aAssets = sceneE1.querySelector('a-assets')
-//           var aAssetsItem = aAssets.querySelector('a-asset-item')
-//           // console.log(sceneE1)
-//           // console.log(aEntity)
-//           console.log(anft)
-//           // console.log(aAssets)
-//           // console.log(aAssetsItem)
-//           var nftVariableArray = anft.getAttribute('url').split('/')
-//           var nftVariable = nftVariableArray[2]
-//           console.log(nftVariable)
-
-//           if(nftVariable == "image01"){
-//             console.log(nftVariable);
-//             console.log(aAssetsItem.getAttribute('src'));
-//             aAssetsItem.setAttribute('src', 'assets/models/painting02/scene.gltf');
-//             console.log(aAssetsItem.getAttribute('src'));
-
-//           } else if (nftVariable == "image02"){
-//             console.log(nftVariable);
-//             console.log(aAssetsItem.getAttribute('src'));
-//             aAssetsItem.setAttribute('src', 'assets/models/painting02/scene.gltf');
-//             console.log(aAssetsItem.getAttribute('src'));
-//           }
-//         }
-//       });
-// }
-
-
-
 function getDistanceFromLatLonInM(lat1, lon1, lat2, lon2) {
+  // CodeReference / SourceCode => https://www.thiscodeworks.com/algorithm-calculate-distance-between-two-latitude-longitude-points-haversine-formula-stack-overflow-javascript/5ee0afcd29a25b00147315ec
   var R = 6371; // Radius of the earth in km
   var dLat = deg2rad(lat2-lat1);  // deg2rad below
   var dLon = deg2rad(lon2-lon1); 
@@ -219,15 +184,12 @@ const successCallback = function(position){
           console.log(aEntity)
         }
       }
-
-
     }
   });
 }
 
 const errorCallback = function(error){
     console.log(error)
-
 }
 
 
