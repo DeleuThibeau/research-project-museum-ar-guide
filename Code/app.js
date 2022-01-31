@@ -1,3 +1,7 @@
+// Reference Code => https://aframe.io/docs/1.2.0/introduction/writing-a-component.html 
+// Reference Code => https://www.thiscodeworks.com/algorithm-calculate-distance-between-two-latitude-longitude-points-haversine-formula-stack-overflow-javascript/5ee0afcd29a25b00147315ec
+// Reference Code => https://stackoverflow.com/questions/19591012/geolocation-success-callback-how-do-i-work-with-the-returned-object-outside-th
+
 document.addEventListener('DOMContentLoaded', function(){
   console.log('DOM fully loaded and parsed');
   renderCorrectFunctions();
@@ -34,10 +38,8 @@ const dynamicTextCodePage = function(){
     })
     .then((jsondata) => {
         json = jsondata
-        // console.log(json)
+
         if(json){
-            // console.log(json)
-            // Code reference => https://aframe.io/docs/1.2.0/introduction/writing-a-component.html 
             AFRAME.registerComponent('render-dynamic-text', {
                 init: function () {
                   var sceneE1 = this.el;
@@ -70,20 +72,12 @@ const dynamicTextImagePage = function(){
   })
   .then((jsondata) => {
       json = jsondata
-      // console.log(json)
       if(json){
-          // console.log(json)
-          // Code reference => https://aframe.io/docs/1.2.0/introduction/writing-a-component.html 
           AFRAME.registerComponent('render-dynamic-text', {
               init: function () {
                 var sceneE1 = this.el;
                 var atext = sceneE1.querySelectorAll("a-text")
-                var aEntity = sceneE1.querySelector('a-entity')
-                // console.log(sceneE1)
-                // console.log(aEntity)
                 console.log(atext)
-                // console.log(atext.setAttribute('value', json.painting02.description))
-                // atext.setAttribute('value', json.painting02.description)
                 atext[0].setAttribute('value', json.painting01.name)
                 console.log(atext[0])
                 atext[1].setAttribute('value', json.painting01.description)
@@ -99,7 +93,6 @@ const dynamicTextImagePage = function(){
 }
 
 function getDistanceFromLatLonInM(lat1, lon1, lat2, lon2) {
-  // CodeReference / SourceCode => https://www.thiscodeworks.com/algorithm-calculate-distance-between-two-latitude-longitude-points-haversine-formula-stack-overflow-javascript/5ee0afcd29a25b00147315ec
   var R = 6371; // Radius of the earth in km
   var dLat = deg2rad(lat2-lat1);  // deg2rad below
   var dLon = deg2rad(lon2-lon1); 
@@ -136,6 +129,7 @@ const modelDistanceCalculator = function(nameModel, deviceLat, deviceLon){
   return distance
 }
 
+// This function contains the model scaling depending on distance calculations.
 const successCallback = function(position){
   var deviceLat = position.coords.latitude
   var deviceLon =  position.coords.longitude
